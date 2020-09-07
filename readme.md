@@ -30,3 +30,10 @@ The 'Design' Project will be updated and finalized.
 - **Every change** that you do, it has to be on a branch. Commits on master would directly be closed.
 - Make sure that before you create a new branch for new changes,[syncing with upstream](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) is neccesary.
 
+### Good Coding practices to make project easier to grasp
+
+- whenever defining a function add multiline comment specifying params, input and ouput with short working.
+- whenever defining a class/enum/structure specify using multiline comment member data and inheritance (if any) with short description.
+- specify any 3rd Party Modules being used at the starting of file.
+- Don't comment out unused code and commit. Test and decide the best.
+- Fully test your methods and Algorithms before commiting. (easier for reviewer)
