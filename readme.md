@@ -5,14 +5,14 @@ QRCodes made more meaningful
 Directories
 - Design : Contains designs and data storing area.
 - LabelGen : Contains modules that will convert binary files into desired Optical Label
-- AudioHandling : Conatins modules to compress binary audio files and support for multiple extensions
-- Decoding : Conatins decoding versions of Optical Label
-- Encoding : Conatins encoding versions of Optical Label
-- ClientApp : Conatins a mini-project on App development which would scan Optical Label and use our encoding/decoding techniques to output audio/
+- AudioHandling : Contains modules to compress binary audio files and support for multiple extensions
+- Decoding : Contains decoding versions of Optical Label
+- Encoding : Contains encoding versions of Optical Label
+- ClientApp : Contains a mini-project on App development which would scan Optical Label and use our encoding/decoding techniques to output audio/
 - Misc : Contains modules for pattern recognition, and other necessary tools and features.
 
 ## Brief about Working
-The 'Design' Project will be updated and finalized.
+The 'Design' will be updated and finalized.
 
 'AudioHandling' will accept any audio format of some limited duration (10-15seconds) and convert it into compressed binary.
 
