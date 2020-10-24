@@ -9,7 +9,7 @@ import cairo
 import os
 import math
 
-def generateBaseTemplate(baseLength, primaryColor, secondaryColor, accentColor, dst = os.getcwd()+'../template/v2_base.png', WHratio=8):
+def generateBaseTemplate(baseLength, primaryColor, secondaryColor, accentColor, dst = os.getcwd()+'/LabelGen/template/v2_base.png', WHratio=8):
     """
         This function is used to generate Base Template for Optical Label.
 
