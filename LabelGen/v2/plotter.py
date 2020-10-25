@@ -79,4 +79,5 @@ def plotDatapoints(stage2label_path, label_dst, sub_signature):
 
     
 
-    cv.imwrite(label_dst, label)
+    success = cv.imwrite(label_dst, label)
+    print("Label Generated Success : " + str(success))

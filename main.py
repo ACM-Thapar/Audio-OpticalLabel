@@ -15,8 +15,8 @@ if __name__ == "__main__":
     v2Sign = hr.hashReducer(sign, 21)
     print("v2 AudioLabel Signature : " + v2Sign)
 
-    plt.plotDatapoints("LabelGen/v2/output/LabelStage2.png", f"LabelGen/v2/output/{v2Sign}.png", v2Sign)
+    Labelgen.bindCompanyLogo("Misc/assets/multimediaQR.png", 120, f"LabelGen/v2/output/{v2Sign}.png")
 
-    Labelgen.bindCompanyLogo(os.getcwd()+"/Misc/assets/acm_logo.png", 120, os.getcwd()+"/LabelGen/v2/output/LabelStage2.png")
+    plt.plotDatapoints(f"LabelGen/v2/output/{v2Sign}.png", f"LabelGen/v2/output/{v2Sign}.png", v2Sign)
     pass
 
