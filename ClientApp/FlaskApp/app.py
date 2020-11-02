@@ -63,7 +63,7 @@ def predict():
         plt(locsave, locsave, v2Sign)
 
         print(loc1,loc2)
-    return render_template('result.html',locsave=locsave)
+    return render_template('result.html',aid=aid,sign=v2Sign,locsave=locsave)
 
 if __name__ == "__main__":
     app.run(debug=True)
