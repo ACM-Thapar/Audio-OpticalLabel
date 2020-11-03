@@ -9,3 +9,4 @@ pyvenv.cfg
 venv
 __pycache__/
 *.pyc
+ClientApp/FlaskApp/static/*
