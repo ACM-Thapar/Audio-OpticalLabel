@@ -9,7 +9,7 @@ import v2.AudioToID as AudioID
 import v2.IDToHash as Hash
 import v2.hashReducer as hr
 
-UPLOAD_FOLDER = './static/uploads'
+UPLOAD_FOLDER = './ClientApp/FlaskApp/static/uploads'
 ALLOWED_EXTENSIONS = {'wav', 'png'}
 
 app = Flask(__name__)
@@ -50,7 +50,7 @@ def predict():
             filename = secure_filename(logo.filename)
             logo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             loc2=os.path.join(app.config['UPLOAD_FOLDER'], filename)
-       
+
         aid =  AudioID.generateAudioID(loc1)
         print("AudioID : " + str(aid))
         sign = Hash.generateHash(aid)
@@ -58,10 +58,11 @@ def predict():
         v2Sign = hr.hashReducer(sign, 21)
         print("v2 AudioLabel Signature : " + v2Sign)
         locsave=f"./static/output/{v2Sign}.png"
+        print(f'Line 61 {locsave}')
         Labelgen(loc2, 120,locsave)
-
+        print(f'Line 63 {locsave}')
         plt(locsave, locsave, v2Sign)
-
+        print(f'Line 65 {locsave}')
         print(loc1,loc2)
     return render_template('result.html',aid=aid,sign=v2Sign,locsave=locsave)
 
