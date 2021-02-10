@@ -26,11 +26,11 @@ def bindCompanyLogo(logoDir, boxheight, saveDst, WHratio=8):
         (None)
     """
     currdir = os.getcwd()
-    tempDir = os.path.join(currdir, 'ClientApp', 'FlaskApp', 'v2', 'template', 'v2_base.png') #"./template/v2_base.png"
+    tempDir = os.path.join(currdir, 'v2', 'template', 'v2_base.png') #"./template/v2_base.png"
     temp = cv.imread(tempDir, cv.IMREAD_UNCHANGED)
     print('Line 32')
-    logoDir = os.path.join( os.getcwd(),'ClientApp', 'FlaskApp', 'static', 'uploads', os.path.basename(logoDir))
-    saveDst = os.path.join( os.getcwd(),'ClientApp', 'FlaskApp', 'static', 'output', os.path.basename(saveDst))
+    logoDir = os.path.join( os.getcwd(), 'static', 'uploads', os.path.basename(logoDir))
+    saveDst = os.path.join( os.getcwd(), 'static', 'output', os.path.basename(saveDst))
     print(f'{tempDir, logoDir}')
     logo = cv.imread(logoDir, cv.IMREAD_UNCHANGED)
 

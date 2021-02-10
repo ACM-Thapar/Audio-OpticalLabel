@@ -29,8 +29,8 @@ def plotDatapoints(stage2label_path, label_dst, sub_signature):
     #len = 21 and radix = 8
     #7=boxHeight/2 - boxHeight/16
     #0,0 is intersection of reference line and dividing line.
-    stage2label_path = os.path.join(os.getcwd(), 'ClientApp', 'FlaskApp', 'static', 'output', os.path.basename(stage2label_path))
-    label_dst = os.path.join(os.getcwd(), 'ClientApp', 'FlaskApp', 'static', 'output', os.path.basename(label_dst))
+    stage2label_path = os.path.join(os.getcwd(), 'static', 'output', os.path.basename(stage2label_path))
+    label_dst = os.path.join(os.getcwd(), 'static', 'output', os.path.basename(label_dst))
     print(f'Plotter\n{stage2label_path}, {label_dst}')
     label = cv.imread(stage2label_path, cv.IMREAD_UNCHANGED)
 
