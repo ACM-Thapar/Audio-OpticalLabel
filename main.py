@@ -1,4 +1,5 @@
 import AudioHandling.AudioToID as AudioID
+import Decoding.v2ImageToSubSign as ImageRecognizer
 import Encoding.IDToHash as Hash
 import Encoding.hashReducer as hr
 import LabelGen.v2.bindLogo as Labelgen
@@ -8,6 +9,11 @@ import argparse
 import sys
 
 if __name__ == "__main__":
+    
+    SubSigns = ImageRecognizer.imageToSubSignature('Decoding/446300322707631427235.jpg')
+    
+    
+    print(SubSigns)
     #Testing modules
     parser=argparse.ArgumentParser(description='Calculate AudioID of the file')
     parser.add_argument('-f','--file', metavar='', help='Enter the source of the Audio-file')
