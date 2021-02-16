@@ -61,7 +61,7 @@ def imageToSubSignature(imagePath):
     img = cv2.resize(img, (0,0), fx=0.5, fy=0.5)
     #extract green channel
     green = img[:,:,1]
-    ret, green = cv2.threshold(green, 140, 255, cv2.THRESH_BINARY)
+    _, green = cv2.threshold(green, 140, 255, cv2.THRESH_BINARY)
     green = cv2.medianBlur(green, 3)
     green = cv2.dilate(green, (7,7))
     green = cv2.Canny(green, 200, 100)
@@ -92,7 +92,7 @@ def imageToSubSignature(imagePath):
                 max_y = max(coor[1], coor[3])
 
     green = green[min_y+1:max_y-1, :]
-    #lineY = cv2.HoughLinesP(roi, 5, np.pi/180, 50, minLineLength=int(roi.shape[0]*0.9))
+
 
     cont, heir = cv2.findContours(green, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
     cont.sort(key=lambda x:cv2.boundingRect(x)[0])
