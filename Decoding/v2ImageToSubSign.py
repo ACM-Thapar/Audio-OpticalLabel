@@ -5,7 +5,6 @@
 
 import os
 import cv2
-from cv2 import data
 import numpy as np
 import math
 
