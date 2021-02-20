@@ -53,8 +53,10 @@ def imageToSubSignature(imagePath):
         (str) : SubSignature
     """
     currDir = os.getcwd()
-    path = os.path.join(currDir, imagePath)
+    # path = os.path.join(currDir, imagePath)
+    path=imagePath
     print(path)
+
     img = cv2.imread(path)
     img = np.uint8(img)
     img = cv2.resize(img, (0,0), fx=0.5, fy=0.5)
@@ -93,7 +95,7 @@ def imageToSubSignature(imagePath):
     green = green[min_y+1:max_y-1, :]
 
 
-    cont, heir = cv2.findContours(green, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+    _,cont, heir = cv2.findContours(green, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
     cont.sort(key=lambda x:cv2.boundingRect(x)[0])
     centers = []
     for c in cont :

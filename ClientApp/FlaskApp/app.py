@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for,render_template,send_file
+from flask import Flask, request, url_for,render_template,send_file,jsonify
 from werkzeug.utils import secure_filename
 import os
 
@@ -13,7 +13,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm.attributes import flag_modified
 
 UPLOAD_FOLDER = './static/uploads'
-ALLOWED_EXTENSIONS = {'wav', 'png'}
+ALLOWED_EXTENSIONS = {'wav', 'png','jpeg','jpg'}
 
 app = Flask(__name__)
 app.secret_key="12345678"
@@ -105,7 +105,6 @@ def decode():
                 filename = secure_filename(img.filename)
                 img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 loc_check=os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            
             subsigns=decoder(loc_check)
             for subsign in subsigns:
                 lb=db.session.query(Label).filter_by(SubSignature=subsign).first()
